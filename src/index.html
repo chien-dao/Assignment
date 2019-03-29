@@ -7,6 +7,132 @@
   <title>Assignment</title>
 </head>
 <body>
-  <h1>Hello</h1>
+  <div class="banner sticky">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="navigation d-flex">
+          <div class="home navigate active">
+            <i class="fas fa-home"></i>
+            <span class="title">Trang chủ</span>
+          </div>
+          <div class="notification navigate">
+            <i class="far fa-bell"></i>
+            <span class="title">Thông báo</span>
+          </div>
+          <div class="message navigate">
+            <i class="far fa-envelope"></i>
+            <span class="title">Tin nhắn</span>
+          </div>
+        </div>
+        <div class="logo d-flex text-primary">
+          <i class="fab fa-twitter"></i>
+        </div>
+        <div class="navigation navigation__end d-flex">
+          <div class="search-box">
+            <input type="text" class="search-box__input" placeholder="Tìm kiếm tweeter">
+            <button class="search-box__btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <div class="profile">
+            <img class="profile__pic" src="assets/images/profile.png" alt="profile">
+          </div>
+          <button class="post-tweet btn btn-primary" data-toggle="modal" data-target="#newTweeterModal">
+            Đăng tweet
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-wrapper container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="board">
+          <div class="board__content">
+            <div class="board__photo">
+              <i class="fas fa-camera"></i>
+            </div>
+            <div class="board__personal-info">
+              <p class="board__name">Username</p>
+              <p class="board__tag">@Username</p>
+            </div>
+            <div class="board__data">
+              <div class="tweet">
+                <p class="title">Tweet</p>
+                <p class="data">0</p>
+              </div>
+              <div class="following">
+                <p class="title">Đang theo dõi</p>
+                <p class="data">20</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="tweet-main">
+          <div class="new-tweet">
+            <div class="profile">
+              <img class="profile__pic" src="assets/images/profile.png" alt="profile">
+            </div>
+            <div class="new-tweet__form">
+              <textarea class="new-tweet__input" placeholder="Chuyện gì đang xảy ra?" data-expand></textarea>
+              <button class="post-tweet btn btn-primary">
+                Đăng tweet
+              </button>
+            </div>
+          </div>
+          <div class="tweet-list" data-tweet-list>
+            <div class="tweet-info">
+              <div class="avatar">
+                <img class="avatar__pic" src="assets/images/profile.png" alt="avatar profile">
+              </div>
+              <div class="tweet-content">
+                <div class="tweet-content__header">
+                  <h5 class="title">Username</h5>
+                  <p class="tag">@Username</p>
+                </div>
+                <div class="tweet-content__body">
+                  <p class="content">
+                    Look at this funny tweet xD!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="advertisement">
+          <p>Quảng cáo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="newTweeterModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Soạn Tweet mới</h5>
+          <button data-dismiss="modal" class="btn close-btn">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="new-tweet">
+            <div class="profile">
+              <img class="profile__pic" src="assets/images/profile.png" alt="profile">
+            </div>
+            <div class="new-tweet__form">
+              <textarea class="new-tweet__input" placeholder="Chuyện gì đang xảy ra?" data-expand></textarea>
+              <button class="post-tweet btn btn-primary">
+                Đăng tweet
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -38,11 +38,23 @@ module.exports = {
       },
       {
         test: /\.(sc|c|sa)ss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
+        use: [{
+          loader: 'style-loader',
+        }, {
+          loader: 'css-loader',
+        }, {
+          loader: 'postcss-loader',
+          options: {
+            plugins: function () {
+              return [
+                require('precss'),
+                require('autoprefixer')
+              ];
+            }
+          }
+        }, {
+          loader: 'sass-loader'
+        }]
       },
       {
         test: /\.html$/,
@@ -55,16 +67,18 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',
       excludeChunks: [ 'server' ]
     }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Modal: 'exports-loader?Modal!bootstrap/js/dist/modal',
     }),
     new OpenBrowserPlugin({
       url: `http://localhost:${PORT}`

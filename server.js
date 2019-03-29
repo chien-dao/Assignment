@@ -10,7 +10,6 @@ import PORT from './port.js';
 const app = express();
 const compiler = webpack(config);
 
-app.use(express.static(__dirname));
 app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath
 }));
